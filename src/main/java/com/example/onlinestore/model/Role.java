@@ -1,4 +1,6 @@
 package com.example.onlinestore.model;
 
-public class Base {
+public enum Role {
+    ADMIN,
+    USER
 }

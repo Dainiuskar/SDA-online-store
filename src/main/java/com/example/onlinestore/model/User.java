@@ -2,10 +2,9 @@ package com.example.onlinestore.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -17,6 +16,7 @@ public class User {
 
     private String firstName;
     private String lastName;
+    @OneToOne
     private Address address;
 
 }

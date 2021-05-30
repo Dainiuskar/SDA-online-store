@@ -1,12 +1,8 @@
 package com.example.onlinestore.model;
 
 import lombok.Data;
-import
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -19,6 +15,7 @@ public class UserAccount {
     private String login;
     private String password;
     private Role role;
+    @OneToOne
     private User user;
 
 }
