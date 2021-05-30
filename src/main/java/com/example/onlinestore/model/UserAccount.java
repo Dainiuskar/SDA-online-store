@@ -13,6 +13,8 @@ public class UserAccount {
 
     private String login;
     private String password;
+
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     @OneToOne

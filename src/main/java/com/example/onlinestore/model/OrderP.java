@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Entity
-public class Order {
+public class OrderP {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
@@ -29,5 +29,6 @@ public class Order {
     @ManyToOne
     UserAccount userAccount;
 
+    @Enumerated(EnumType.STRING)
     Status status;
 }

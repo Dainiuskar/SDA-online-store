@@ -18,5 +18,7 @@ public class Product {
     Category category;
 
     Double price;
+
+    @Enumerated(EnumType.STRING)
     ProductType productType;
 }
