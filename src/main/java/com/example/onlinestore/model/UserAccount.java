@@ -1,7 +1,6 @@
 package com.example.onlinestore.model;
 
 import lombok.Data;
-
 import javax.persistence.*;
 
 @Data
@@ -15,7 +14,7 @@ public class UserAccount {
     private String login;
     private String password;
     private Role role;
+
     @OneToOne
     private User user;
-
 }
