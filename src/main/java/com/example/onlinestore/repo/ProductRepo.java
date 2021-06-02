@@ -1,6 +1,6 @@
 package com.example.onlinestore.repo;
 
-import com.example.onlinestore.model.Product;
+import com.example.onlinestore.model.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
