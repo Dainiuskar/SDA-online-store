@@ -1,7 +1,6 @@
 package com.example.onlinestore.service;
 
 import com.example.onlinestore.model.entity.Product;
-import com.example.onlinestore.repo.CategoryRepo;
 import com.example.onlinestore.repo.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +13,7 @@ public class ProductService {
     private final ProductRepo productRepo;
 
     @Autowired
-    public ProductService(ProductRepo productRepo, CategoryRepo categoryRepo) {
+    public ProductService(ProductRepo productRepo) {
         this.productRepo = productRepo;
     }
 
