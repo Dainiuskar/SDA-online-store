@@ -9,11 +9,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/")
+        http
+                .csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/user/**", "/h2/**", "/products/**")
                 .permitAll();
 
-        http.csrf().disable();
         http.headers().frameOptions().disable();
     }
 }
