@@ -18,6 +18,6 @@ public class Category {
     @Size(min = 3, message = "required")
     private String name;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.DETACH)
     private Category parentCategory;
 }
