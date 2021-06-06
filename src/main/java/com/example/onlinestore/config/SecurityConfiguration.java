@@ -12,7 +12,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/user/**", "/h2/**", "/products/**")
+                .antMatchers("/user/**", "/h2/**", "/products/**", "/admin/**")
                 .permitAll();
 
         http.headers().frameOptions().disable();

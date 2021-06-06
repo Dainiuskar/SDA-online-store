@@ -14,6 +14,6 @@ values ('Clothes', null),
 
 INSERT into PRODUCT (title, description, category_id, price, product_type)
 values ('jeans', 'Levis jeans', 4, 30.5, null),
-       ('jeans', 'Levis jeans', 4, 40, null)
+       ('jeans', 'Levis jeans', 4, 40, null);
 
 
