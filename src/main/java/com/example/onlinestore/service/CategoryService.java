@@ -1,6 +1,6 @@
 package com.example.onlinestore.service;
 
-import com.example.onlinestore.model.Category;
+import com.example.onlinestore.model.entity.Category;
 import com.example.onlinestore.repo.CategoryRepo;
 import org.springframework.stereotype.Service;
 
