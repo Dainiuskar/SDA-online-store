@@ -24,7 +24,17 @@ public class AdminCategoryController {
     }
 
     @PostMapping(value = "/add")
-    public void addNewCategory(@RequestBody Category category){
+    public void addNewCategory(@RequestBody Category category) {
         categoryService.addCategory(category);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable Long id) {
+        categoryService.deleteById(id);
+    }
+
+    @PutMapping(value = "update/{id}")
+    public void update(@RequestBody Category category, @PathVariable Long id) {
+        categoryService.saveCategory(id, category);
     }
 }

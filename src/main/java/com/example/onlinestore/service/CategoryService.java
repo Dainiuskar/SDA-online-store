@@ -23,4 +23,15 @@ public class CategoryService {
     public void addCategory(Category category) {
         categoryRepo.save(category);
     }
+
+    public void deleteById(Long id) {
+        categoryRepo.deleteById(id);
+    }
+
+    public void saveCategory(Long id, Category category) {
+        Category toUpdate = categoryRepo.getById(id);
+        toUpdate.setName(category.getName());
+        toUpdate.setParentCategory(category.getParentCategory());
+        categoryRepo.save(toUpdate);
+    }
 }
