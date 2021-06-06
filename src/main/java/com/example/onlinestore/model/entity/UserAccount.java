@@ -1,4 +1,4 @@
-package com.example.onlinestore.model;
+package com.example.onlinestore.model.entity;
 
 import lombok.Data;
 import javax.persistence.*;
@@ -19,4 +19,14 @@ public class UserAccount {
 
     @OneToOne
     private User user;
+
+    public UserAccount(String login, String password, Role role, User user) {
+        this.login = login;
+        this.password = password;
+        this.role = role;
+        this.user = user;
+    }
+
+    public UserAccount() {
+    }
 }

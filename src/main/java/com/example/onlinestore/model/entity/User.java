@@ -1,4 +1,4 @@
-package com.example.onlinestore.model;
+package com.example.onlinestore.model.entity;
 
 import lombok.Data;
 
@@ -17,4 +17,13 @@ public class User {
 
     @OneToOne
     private Address address;
+
+    public User(String firstname, String lastname, Address address) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.address = address;
+    }
+
+    public User() {
+    }
 }

@@ -1,4 +1,4 @@
-package com.example.onlinestore.model;
+package com.example.onlinestore.model.entity;
 
 import lombok.Data;
 
@@ -19,4 +19,14 @@ public class Address {
     String city;
     String street;
     String zipCode;
+
+    public Address(String country, String city, String street, String zipCode) {
+        this.country = country;
+        this.city = city;
+        this.street = street;
+        this.zipCode = zipCode;
+    }
+
+    public Address() {
+    }
 }
