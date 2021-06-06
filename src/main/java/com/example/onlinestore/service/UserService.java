@@ -1,16 +1,15 @@
 package com.example.onlinestore.service;
 
+import com.example.onlinestore.repo.*;
 import com.example.onlinestore.model.entity.Address;
 import com.example.onlinestore.model.entity.Role;
 import com.example.onlinestore.model.entity.User;
 import com.example.onlinestore.model.entity.UserAccount;
 import com.example.onlinestore.model.dto.UserAccountDTO;
-import com.example.onlinestore.repo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 public class UserService {
