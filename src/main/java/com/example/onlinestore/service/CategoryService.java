@@ -12,11 +12,11 @@ public class CategoryService {
 
     private final CategoryRepo categoryRepo;
 
-    public CategoryService(CategoryRepo categoryRepo){
+    public CategoryService(CategoryRepo categoryRepo) {
         this.categoryRepo = categoryRepo;
     }
 
-    public List<Category> getAllCategories(){
+    public List<Category> getAllCategories() {
         return new ArrayList<>(categoryRepo.findAll());
     }
 

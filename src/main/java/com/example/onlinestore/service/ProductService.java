@@ -3,12 +3,13 @@ package com.example.onlinestore.service;
 import com.example.onlinestore.model.entity.Product;
 import com.example.onlinestore.repo.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
+@PreAuthorize("hasRole('ADMIN')")
 public class ProductService {
     private final ProductRepo productRepo;
 
@@ -21,7 +22,25 @@ public class ProductService {
         return productRepo.findAll();
     }
 
-    public Optional<Product> getProductById(Long productId) {
-        return productRepo.findById(productId);
+    @PreAuthorize("permitAll()")
+    public Product getProductById(Long productId) {
+        return productRepo.findOneById(productId);
+    }
+
+    public void addProduct(Product product) {
+        productRepo.save(product);
+    }
+
+    public void deleteProduct(Long id) {
+        productRepo.deleteById(id);
+    }
+
+    public void updateProduct(Product product) {
+        Product editedProduct = getProductById(product.getId());
+        editedProduct.setTitle(product.getTitle());
+        editedProduct.setDescription(product.getDescription());
+        editedProduct.setPrice(product.getPrice());
+        editedProduct.setProductType(product.getProductType());
+        productRepo.save(editedProduct);
     }
 }
