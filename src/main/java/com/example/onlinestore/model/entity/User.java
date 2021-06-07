@@ -1,10 +1,14 @@
 package com.example.onlinestore.model.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class User {
 
@@ -22,8 +26,5 @@ public class User {
         this.firstname = firstname;
         this.lastname = lastname;
         this.address = address;
-    }
-
-    public User() {
     }
 }

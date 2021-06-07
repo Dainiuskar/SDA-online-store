@@ -8,7 +8,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Data
-@UserAccountNotExist
+@UserAccountNotExist(message = "User account already exists, try another login")
 public class UserAccountDTO {
     @NotNull
     @NotEmpty

@@ -1,9 +1,14 @@
 package com.example.onlinestore.model.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Data
+//@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class UserAccount {
 
@@ -25,8 +30,5 @@ public class UserAccount {
         this.password = password;
         this.role = role;
         this.user = user;
-    }
-
-    public UserAccount() {
     }
 }
