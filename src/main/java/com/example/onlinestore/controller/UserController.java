@@ -23,8 +23,8 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping(value = "/registration")
-    public void userRegistration(@Valid @RequestBody UserAccountDTO userAccountDTO) {
+    @PostMapping
+    public void addUser(@Valid @RequestBody UserAccountDTO userAccountDTO) {
         userService.registerNewUserAccount(userAccountDTO);
     }
 
