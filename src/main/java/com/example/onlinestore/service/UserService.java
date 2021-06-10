@@ -1,10 +1,7 @@
 package com.example.onlinestore.service;
 
+import com.example.onlinestore.model.entity.*;
 import com.example.onlinestore.repo.*;
-import com.example.onlinestore.model.entity.Address;
-import com.example.onlinestore.model.entity.Role;
-import com.example.onlinestore.model.entity.User;
-import com.example.onlinestore.model.entity.UserAccount;
 import com.example.onlinestore.model.dto.UserAccountDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -61,5 +58,9 @@ public class UserService {
                 userAccountDTO.getZipCode());
         addressRepo.save(address);
         return address;
+    }
+
+    public List<UserAccount> getAllUserAccounts() {
+        return userAccountRepo.findAll();
     }
 }

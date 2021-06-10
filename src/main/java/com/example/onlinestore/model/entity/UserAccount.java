@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Data
-//@AllArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class UserAccount {
+public class UserAccount extends Cart{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

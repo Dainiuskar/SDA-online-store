@@ -41,13 +41,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http
+                .httpBasic()
+                .and()
+                .authorizeRequests()
                 .antMatchers("/user/registration").permitAll()
-                .antMatchers("/user/**").authenticated()
+                .antMatchers("/user/**").permitAll()
                 .antMatchers("/h2**").permitAll()
                 .antMatchers("/products/**").permitAll()
                 .antMatchers("/admin/**").permitAll()
-                .anyRequest().permitAll()
+                .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .and()
