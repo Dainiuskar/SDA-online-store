@@ -1,8 +1,9 @@
 package com.example.onlinestore.service;
 
-import com.example.onlinestore.model.entity.UserAccount;
+
 import com.example.onlinestore.model.entity.UserDetailsAdapter;
 import com.example.onlinestore.repo.UserAccountRepo;
+import com.example.onlinestore.model.entity.UserAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
