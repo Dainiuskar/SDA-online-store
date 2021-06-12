@@ -16,8 +16,8 @@ public class CategoryService {
         this.categoryRepo = categoryRepo;
     }
 
-    public List<Category> getAllCategories() {
-        return new ArrayList<>(categoryRepo.findAll());
+    public List<Category> getAllCategories(){
+        return new ArrayList<>(categoryRepo.findByIdGreaterThan(1L));
     }
 
     public void addCategory(Category category) {
