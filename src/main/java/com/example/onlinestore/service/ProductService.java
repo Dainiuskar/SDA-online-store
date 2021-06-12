@@ -18,6 +18,7 @@ public class ProductService {
         this.productRepo = productRepo;
     }
 
+    @PreAuthorize("permitAll()")
     public List<Product> getAllProducts() {
         return productRepo.findAll();
     }

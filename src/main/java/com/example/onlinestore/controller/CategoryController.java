@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "admin/category")
-public class AdminCategoryController {
+@RequestMapping(value = "category")
+public class CategoryController {
 
     CategoryService categoryService;
 
     @Autowired
-    public AdminCategoryController(CategoryService categoryService) {
+    public CategoryController(CategoryService categoryService) {
         this.categoryService = categoryService;
     }
 

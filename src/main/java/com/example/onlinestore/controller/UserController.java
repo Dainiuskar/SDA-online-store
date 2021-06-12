@@ -38,4 +38,9 @@ public class UserController {
     public List<UserAccount> getAllUserAccounts(){
         return userService.getAllUserAccounts();
     }
+
+    @GetMapping(value = "/{login}")
+    public UserAccount getUserAccount(@PathVariable String login){
+        return userService.getUserAccount(login);
+    }
 }

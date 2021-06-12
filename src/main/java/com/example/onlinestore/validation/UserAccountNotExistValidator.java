@@ -20,6 +20,6 @@ public class UserAccountNotExistValidator
     @Override
     public boolean isValid(Object obj, ConstraintValidatorContext constraintValidatorContext) {
         UserAccountDTO userAccountDTO = (UserAccountDTO) obj;
-        return !userAccountRepo.existsByLogin(userAccountDTO.getLogin());
+        return !userAccountRepo.existsByLoginIgnoreCase(userAccountDTO.getLogin());
     }
 }

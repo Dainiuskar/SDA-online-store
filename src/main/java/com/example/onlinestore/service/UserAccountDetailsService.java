@@ -20,7 +20,7 @@ public class UserAccountDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String login) {
-        UserAccount userAccount = userAccountRepo.findByLogin(login);
+        UserAccount userAccount = userAccountRepo.findByLoginIgnoreCase(login);
         if(userAccount == null)
             throw new UsernameNotFoundException(login + "not found");
         return new UserDetailsAdapter(userAccount);
