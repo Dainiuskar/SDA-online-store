@@ -1,30 +1,33 @@
 package com.example.onlinestore.service;
 
+import com.example.onlinestore.repo.*;
 import com.example.onlinestore.model.entity.Address;
 import com.example.onlinestore.model.entity.Role;
 import com.example.onlinestore.model.entity.User;
 import com.example.onlinestore.model.entity.UserAccount;
 import com.example.onlinestore.model.dto.UserAccountDTO;
-import com.example.onlinestore.repo.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class UserService {
     private final AddressRepo addressRepo;
     private final UserAccountRepo userAccountRepo;
     private final UserRepo userRepo;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
     public UserService(AddressRepo addressRepo,
                        UserAccountRepo userAccountRepo,
-                       UserRepo userRepo) {
+                       UserRepo userRepo, PasswordEncoder passwordEncoder) {
         this.addressRepo = addressRepo;
         this.userAccountRepo = userAccountRepo;
         this.userRepo = userRepo;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public List<User> getAllUsers() {
@@ -34,10 +37,12 @@ public class UserService {
     public void registerNewUserAccount(UserAccountDTO userAccountDTO) {
         Address address = createAddress(userAccountDTO);
         User user = createUser(userAccountDTO, address);
-        UserAccount userAccount = new UserAccount(userAccountDTO.getLogin(),
-                userAccountDTO.getPassword(),
+        UserAccount userAccount = new UserAccount(
+                userAccountDTO.getLogin(),
+                passwordEncoder.encode(userAccountDTO.getPassword()),
                 Role.USER,
                 user);
+        userAccount.setLogin(userAccountDTO.getLogin());
         userAccountRepo.save(userAccount);
     }
 
@@ -54,7 +59,7 @@ public class UserService {
                 userAccountDTO.getCity(),
                 userAccountDTO.getStreet(),
                 userAccountDTO.getZipCode());
-            addressRepo.save(address);
+        addressRepo.save(address);
         return address;
     }
 }
