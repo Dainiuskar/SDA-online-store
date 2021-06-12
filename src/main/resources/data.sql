@@ -7,10 +7,12 @@ values ('Jonas', 'Jonaitis', 1),
        ('Petras', 'Petraitis', 2);
 
 INSERT into CATEGORY (name, parent_category_id)
-values ('Clothes', null),
+values ('Clothes', null ),
        ('Mens clothes', 1),
        ('Pants', 2),
-       ('Casual pants', 3);
+       ('Casual pants', 3),
+       ('Kelnes', 2),
+       ('briedas', 2 );
 
 INSERT into PRODUCT (title, description, category_id, price, product_type)
 values ('jeans', 'Levis jeans', 4, 30.5, null),
