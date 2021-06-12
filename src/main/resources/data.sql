@@ -19,11 +19,6 @@ values ('jeans', 'Levis jeans', 4, 30.5, null),
        ('jeans', 'Levis jeans', 4, 40, null);
 
 
-
-
-INSERT into CATEGORY (name)
-values ('Clothes');
-
 INSERT into CATEGORY (name, parent_category_id)
 values ('Pants', 1),
        ('Sweater', 1);

@@ -1,19 +1,11 @@
 package com.example.onlinestore.model.entity;
 
 import lombok.Data;
-
 import javax.persistence.*;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-@Data
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import javax.validation.constraints.Size;
 
 @Data
 @AllArgsConstructor
