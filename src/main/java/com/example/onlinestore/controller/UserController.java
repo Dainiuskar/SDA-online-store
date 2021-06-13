@@ -41,6 +41,6 @@ public class UserController {
 
     @GetMapping(value = "/{login}")
     public UserAccount getUserAccount(@PathVariable String login){
-        return userService.getUserAccount(login);
+        return userService.getUserAccountByLogin(login);
     }
 }

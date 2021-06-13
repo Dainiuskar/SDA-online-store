@@ -63,7 +63,7 @@ public class UserService {
         return userAccountRepo.findAll();
     }
 
-    public UserAccount getUserAccount(String login) {
+    public UserAccount getUserAccountByLogin(String login) {
             return userAccountRepo.findByLoginIgnoreCase(login);
     }
 }
